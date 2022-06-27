@@ -1,5 +1,7 @@
+const initialData = JSON.parse(localStorage.getItem('NOTES_APP')) ? JSON.parse(localStorage.getItem('NOTES_APP')) : [];
+
 const getInitialData = () => (
-  JSON.parse(localStorage.getItem('NOTES_APP'))
+  initialData
 );
 
 const showFormattedDate = (date) => {
