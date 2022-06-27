@@ -3,6 +3,7 @@ import { getInitialData } from '../utils';
 import ActiveNotes from './ActiveNotes';
 import AddNotes from './AddNotes';
 import ArchiveNotes from './ArchiveNotes';
+import Footer from './Footer';
 import Header from './Header';
 
 class NotesApp extends React.Component {
@@ -90,6 +91,7 @@ class NotesApp extends React.Component {
                     <ActiveNotes notes={this.state.searchNotes} onDelete={this.onDeleteHandler} onChangeArchive={this.onChangeArchiveHandler} />
                     <ArchiveNotes notes={this.state.searchNotes} onDelete={this.onDeleteHandler} onChangeArchive={this.onChangeArchiveHandler} />
                 </div>
+                <Footer />
             </>
         );
     }
