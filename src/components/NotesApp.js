@@ -18,6 +18,7 @@ class NotesApp extends React.Component {
         this.onChangeArchiveHandler = this.onChangeArchiveHandler.bind(this);
         this.onSearchHandler = this.onSearchHandler.bind(this);
         this.onAddNoteHandler = this.onAddNoteHandler.bind(this);
+        this.addToLocalStorage = this.addToLocalStorage.bind(this);
     }
 
     onDeleteHandler(id) {
@@ -54,7 +55,7 @@ class NotesApp extends React.Component {
             notes: [
               ...prevState.notes,
               {
-                id: +new Date(),
+                id: +new Date(), 
                 title,
                 body,
                 archived: false,
@@ -73,14 +74,19 @@ class NotesApp extends React.Component {
             ]
           }
         });
-      }
+    }
+
+    addToLocalStorage({ title, body }) {
+        this.onAddNoteHandler({ title, body });
+    }
 
     render() { 
         return (
             <>
                 <Header onSearch={this.onSearchHandler} />
+                {localStorage.setItem('NOTES_APP', JSON.stringify(this.state.notes))}
                 <div className='note-app__body'>
-                    <AddNotes addNote={this.onAddNoteHandler} />
+                    <AddNotes addNote={this.addToLocalStorage} />
                     <ActiveNotes notes={this.state.searchNotes} onDelete={this.onDeleteHandler} onChangeArchive={this.onChangeArchiveHandler} />
                     <ArchiveNotes notes={this.state.searchNotes} onDelete={this.onDeleteHandler} onChangeArchive={this.onChangeArchiveHandler} />
                 </div>
