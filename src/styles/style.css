@@ -53,7 +53,6 @@ input::placeholder, textarea::placeholder {
     max-width: 1000px;
     margin-top: 0;
     padding: 12px;
-    margin-bottom: 36px;
 }
 .note-app__body h2 {
     font-weight: normal;
@@ -102,6 +101,7 @@ input::placeholder, textarea::placeholder {
 .notes-list__empty-message {
     text-align: center;
     color: var(--main-color-2);
+    margin-bottom: 48px;
 }
 .notes-list {
     display: grid;
@@ -178,7 +178,7 @@ footer p {
         font-size: 32px;
     }
     .note-app__body {
-        margin: 16px auto 36px;
+        margin: 16px auto;
     }
 }
 @media only screen and (min-width: 500px) {
