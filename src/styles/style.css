@@ -39,6 +39,7 @@ input::placeholder, textarea::placeholder {
     border-bottom: 1px solid var(--main-color-3);
 }
 .note-app__header h1 {
+    font-size: 16px;
     margin: 8px 0;
     flex: 1;
     color: var(--main-color-3);
@@ -50,7 +51,7 @@ input::placeholder, textarea::placeholder {
 }
 .note-app__body {
     max-width: 1000px;
-    margin: 16px auto;
+    margin-top: 0;
     padding: 12px;
 }
 .note-app__body h2 {
@@ -143,7 +144,7 @@ input::placeholder, textarea::placeholder {
     background-color: transparent;
     border: 0;
     border-top: 1px solid var(--main-color-2);
-    padding: 8px 0;
+    padding: 12px 0;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     cursor: pointer;
@@ -161,6 +162,14 @@ input::placeholder, textarea::placeholder {
 .note-item__delete-button:hover {
     color: var(--bg-color-1);
     background-color: var(--delete-color);
+}
+@media only screen and (min-width: 420px) {
+    .note-app__header h1 {
+        font-size: 32px;
+    }
+    .note-app__body {
+        margin: 16px auto;
+    }
 }
 @media only screen and (min-width: 500px) {
     .notes-list {
