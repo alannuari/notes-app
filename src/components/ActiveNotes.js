@@ -4,7 +4,7 @@ import NotesItem from './NotesItem';
 
 const ActiveNotes = ({ notes, onDelete, onChangeArchive }) => {
 
-    const activeNotes = notes.filter((note) => note.archived === false);
+    const activeNotes = notes.length ? [] : notes.filter((note) => note.archived === false);
 
     return (
         <>
